@@ -1,6 +1,6 @@
 {
   "name": "react-portal-overlay",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A lightweight and performant fullscreen overlay component using React portals to render anywhere you need them to",
   "main": "lib/index.js",
   "module": "lib/index.es.js",
