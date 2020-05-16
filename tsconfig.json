@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "esnext",
+    "module": "esnext",
+
+    /* Type-Checking Options */
+    "strict": true,
+
+    /* Compiler options */
+    "declaration": true,
+    "removeComments": true,
+    "jsx": "preserve",
+
+    /* Module resoltion */
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true
+  },
+  "include": ["src/**/*", "types/**/*"]
+}
