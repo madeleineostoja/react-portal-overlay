@@ -2,11 +2,12 @@
   "name": "react-portal-overlay",
   "version": "1.0.0",
   "description": "A lightweight and performant fullscreen overlay component using React portals to render anywhere you need them to",
-  "main": "lib/index.js",
-  "module": "lib/index.es.js",
-  "types": "lib/index.d.ts",
+  "main": "index.js",
+  "module": "index.es.js",
   "files": [
-    "lib"
+    "/*.js",
+    "/*.ts",
+    "/*.map"
   ],
   "scripts": {
     "develop": "rollup -c -w",
@@ -14,7 +15,6 @@
     "build": "rollup -c",
     "build-storybook": "build-storybook --docs",
     "deploy:docs": "storybook-to-ghpages --out .cache",
-    "clean": "rm -rf ./lib",
     "prepublishOnly": "npm run build"
   },
   "repository": {
