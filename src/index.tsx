@@ -21,7 +21,7 @@ export type OverlayProps = {
   /** Whether to close the overlay when the escape key is pressed */
   closeOnEsc?: boolean;
   /** Animation configuration */
-  animation?: { duration: number; easing: string };
+  animation?: { duration: number; easing: string } | null;
   /** Action when overlay closes */
   onClose?(): void;
   /** Content of the overlay */
@@ -65,7 +65,7 @@ export function Overlay({
     defaultPortal.current &&
     !!defaultPortalStyles
   ) {
-    Object.keys(defaultPortalStyles).forEach((prop) => {
+    Object.keys(defaultPortalStyles).forEach(prop => {
       defaultPortal.current.defaultNode.style[prop] = defaultPortalStyles[prop];
     });
   }
@@ -94,7 +94,7 @@ export function Overlay({
         in={open}
         classNames="overlay"
         unmountOnExit
-        timeout={animation.duration}
+        timeout={animation?.duration || 0}
       >
         <div
           css={css`
@@ -104,7 +104,8 @@ export function Overlay({
             width: 100%;
             height: 100%;
             overflow: scroll;
-            transition: opacity ${animation.duration}ms ${animation.easing};
+            ${animation &&
+              `transition: opacity ${animation.duration}ms ${animation.easing}`};
             -webkit-overflow-scrolling: touch;
 
             /* Transitions */
@@ -116,7 +117,7 @@ export function Overlay({
               opacity: 0;
             }
           `}
-          onClick={(e) => {
+          onClick={e => {
             if (closeOnClick) {
               e.preventDefault();
               if (e.target === e.currentTarget) {
