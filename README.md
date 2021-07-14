@@ -12,7 +12,7 @@ npm i react-portal-overlay
 
 ## Usage
 
-See the [API Docs](https://seaneking.github.io/react-portal-overlay/) for a full overview of props and options.
+See the [API Docs](https://madeleineostoja.github.io/react-portal-overlay/) for a full overview of props and options.
 
 ```js
 import React, { useState } from 'react';
