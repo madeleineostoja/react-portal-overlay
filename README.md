@@ -22,7 +22,7 @@ export default () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <Overlay open={open} onClose={() => setOpen(false)}>
+    <Overlay open={open} onClose={setOpen.bind(null, false)}>
       <h1>My overlay</h1>
     </Overlay>
   );
